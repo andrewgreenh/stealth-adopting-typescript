@@ -1,14 +1,37 @@
+import { generateUsers } from "./userGenerator";
 import { loadUsers } from "./userRepository";
-import { upsertUser } from "./userService";
+import { getUsersByType, upsertUser } from "./userService";
 
 async function main() {
-  await upsertUser({ id: 1, name: "Luke Skywalker" });
-  await upsertUser({ id: 2, name: "Han Solo" });
-  await upsertUser({ id: 3, name: "Rey Spoiler-Alert" });
-  await upsertUser({ id: 4, name: "Yoda" });
+  const usersToBeCreated = generateUsers()
+    .addUser({
+      name: "Luke Skywalker",
+      type: "jedi",
+      power: "Trainer"
+    })
+    .addUser({
+      name: "Han Solo",
+      type: "rebel",
+      weapon: "blaster"
+    })
+    .addUser({
+      name: "Rey Spoiler-Alert",
+      type: "jedi",
+      power: "Force Heal"
+    })
+    .addUser({
+      name: "Yoda",
+      type: "jedi",
+      power: "Lifting X-Wings"
+    })
+    .build();
+
+  for (const u of usersToBeCreated) upsertUser(u);
 
   const users = await loadUsers();
   console.log(users);
+
+  console.log(await getUsersByType());
 }
 
 main();

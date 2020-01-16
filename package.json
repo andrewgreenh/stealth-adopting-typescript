@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "watch": "babel --watch -d build ./src"
+    "watch": "babel src --watch -d build  --extensions \".js,.ts\""
   },
   "dependencies": {
     "@babel/cli": "^7.8.3",

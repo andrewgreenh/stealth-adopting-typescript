@@ -5,7 +5,6 @@ export async function getUser(id) {
 
   return users.find(u => u.id === id);
 }
-
 export async function upsertUser(user) {
   const newUsers = await mutateUsers(users => {
     const oldUser = users.find(u => u.id === user.id);
@@ -26,4 +25,13 @@ async function mutateUsers(mutationFunction) {
   const newUsers = mutationFunction(oldUsers) ?? oldUsers;
   await saveUsers(newUsers);
   return newUsers;
+}
+
+export async function getUsersByType() {
+  const byType = {};
+  for (const user of await loadUsers()) {
+    if (!byType[user.type]) byType[user.type] = [];
+    byType[user.type].push(user);
+  }
+  return byType;
 }

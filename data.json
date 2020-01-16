@@ -1,18 +1,26 @@
 [
   {
     "id": 1,
-    "name": "Luke Skywalker"
+    "name": "Luke Skywalker",
+    "type": "jedi",
+    "power": "Trainer"
   },
   {
     "id": 2,
-    "name": "Han Solo"
+    "name": "Han Solo",
+    "type": "rebel",
+    "weapon": "blaster"
   },
   {
     "id": 3,
-    "name": "Rey Spoiler-Alert"
+    "name": "Rey Spoiler-Alert",
+    "type": "jedi",
+    "power": "Force Heal"
   },
   {
     "id": 4,
-    "name": "Yoda"
+    "name": "Yoda",
+    "type": "jedi",
+    "power": "Lifting X-Wings"
   }
 ]
