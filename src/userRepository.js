@@ -17,6 +17,9 @@ export async function saveUsers(users) {
 }
 
 async function ensureDB() {
-  const exists = await new Promise(r => fs_.exists(dbPath, bool => r(bool)));
+  const exists = await fs
+    .stat(dbPath)
+    .then(() => true)
+    .catch(() => false);
   if (!exists) await fs.writeFile(dbPath, "[]");
 }
