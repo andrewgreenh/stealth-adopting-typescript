@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "watch": "babel src --watch -d build  --extensions \".js,.ts\""
+    "watch": "babel src --watch -d build  --source-maps --extensions \".js\"",
+    "start": "node --enable-source-maps ./build/main.js"
   },
   "dependencies": {
     "@babel/cli": "^7.8.3",
