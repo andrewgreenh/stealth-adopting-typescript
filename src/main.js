@@ -1,5 +1,4 @@
 import { generateUsers } from "./userGenerator";
-import { loadUsers } from "./userRepository";
 import { getUsersByType, upsertUser } from "./userService";
 
 async function main() {
@@ -7,22 +6,22 @@ async function main() {
     .addUser({
       name: "Luke Skywalker",
       type: "jedi",
-      power: "Trainer"
+      power: "Trainer",
     })
     .addUser({
       name: "Han Solo",
       type: "rebel",
-      weapon: "blaster"
+      weapon: "blaster",
     })
     .addUser({
       name: "Rey Spoiler-Alert",
       type: "jedi",
-      power: "Force Heal"
+      power: "Force Heal",
     })
     .addUser({
       name: "Yoda",
       type: "jedi",
-      power: "Lifting X-Wings"
+      power: "Lifting X-Wings",
     })
     .build();
 
