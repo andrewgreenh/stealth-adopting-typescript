@@ -13,7 +13,10 @@ export async function loadUsers() {
 
 export async function saveUsers(users) {
   await ensureDB();
-  await fs.writeFile(dbPath, JSON.stringify(users, null, 2));
+  await fs.writeFile(
+    dbPath,
+    JSON.stringify(users, null, 2)
+  );
 }
 
 async function ensureDB() {

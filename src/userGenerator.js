@@ -10,7 +10,7 @@ export function generateUsers() {
     },
     build() {
       return users;
-    }
+    },
   };
   return builder;
 }

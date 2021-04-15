@@ -30,7 +30,9 @@ async function main() {
   const users = await loadUsers();
   console.log(users);
 
-  console.log(await getUsersByType());
+  const usersByType = await getUsersByType();
+
+  console.log(usersByType);
 }
 
 main();
